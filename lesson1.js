@@ -15,3 +15,4 @@ alert (admin);
 var num = 1000;
 var str = '108';
 alert (num + str);
+
