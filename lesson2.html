@@ -1,0 +1,118 @@
+<meta charset="UTF-8">
+<script>
+  "use strict";
+
+// №3 Получаем от пользователя целочисленные переменные и в зависимости от этого выполняются операции с ними
+
+  let a = +prompt('Введите число А');
+  let b = +prompt('Введите число B');
+
+  if (Number.isNaN(a) || Number.isNaN(b)) {
+  	alert('Введите корректные значения чисел');
+  } else if (a > 0 && b > 0) {
+  	console.log(`Числа положительные. Разность чисел = ${a - b}`);
+  } else if (a < 0 && b < 0) {
+	console.log(`Числа отрицательные. Произведение чисел = ${a * b}`);
+  } else {
+  	console.log(`Числа разных знаков. Сумма чисел = ${a + b}`);
+  }
+
+// Присвоить переменной а значение в промежутке [0..15]. С помощью switch организовать вывод числе от а до 15
+
+a = +prompt('Введите число от 1 до 15');
+switch (a) {
+  case 1:
+    console.log(a++);
+  case 2:
+    console.log(a++);
+  case 3:
+    console.log(a++);
+  case 4:
+    console.log(a++);
+  case 5:
+    console.log(a++);
+  case 6:
+    console.log(a++);
+  case 7:
+    console.log(a++);
+  case 8:
+    console.log(a++);
+  case 9:
+    console.log(a++);
+  case 10:
+    console.log(a++);
+  case 11:
+    console.log(a++);
+  case 12:
+    console.log(a++);
+  case 13:
+    console.log(a++);
+  case 14:
+    console.log(a++);
+  case 15:
+    console.log(a++);
+}
+
+// Функции сложения,вычитания, умножения, деления
+
+function addition(a, b) {
+  return a + b;
+}
+
+function substraction(a, b) {
+  return a - b;
+}
+
+function multiplication(a, b) {
+  return a * b;
+}
+
+function division(a, b) {
+  return a / b;
+}
+
+//Функция с тремя параметрами
+
+function mathOperation(arg1, arg2, operation) {
+  let result = false;
+
+  switch (operation) {
+  	case 'add':
+  	  result = addition(arg1, arg2);
+  	  break;
+  	case 'substract':
+  	  result = substraction(arg1, arg2);
+  	  break;
+  	case 'multiply':
+  	  result = multiplication(arg1, arg2);
+  	  break;
+  	case 'divide':
+  	  result = division(arg1, arg2);
+  	  break;
+  }
+  return result
+}
+
+let arg1 = +prompt('Введите arg1');
+let arg2 = +prompt('Введите arg2');
+let operation = prompt('Введите название мат.оперaции (add, substract, multiply, divide)');
+
+console.log(`Результат вычислений: ${mathOperation(arg1, arg2, operation)}`);
+
+// С помощью рекурсии написать функцию возведения в степень
+
+let val = +prompt('Введите число');
+let pow = +prompt('Введите степень числа');
+
+function power(val, pow) {
+  if (pow > 0) {
+  	return val * power(val, pow - 1);
+  } else if (pow < 0) {
+  	return val * power(val, pow + 1);
+  } else
+  	return 1;
+}
+ 
+ console.log(`Число ${val} в степени ${pow} = ${power(val, pow)}`);
+
+</script>
